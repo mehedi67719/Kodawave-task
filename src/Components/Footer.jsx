@@ -29,8 +29,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white pt-20 pb-8 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto ">
+    <footer className="bg-white  pt-20 pb-8 border-t border-gray-100">
+      <div className="max-w-7xl px-2 md:px-0 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <Link to="/" className="inline-block mb-6">
