@@ -3,6 +3,7 @@ import Home from "../Pages/Home";
 import Root from "./Root";
 import Service from "../Pages/Service";
 import About from "../Pages/About";
+import Blog from "../Pages/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path:"/about",
         Component:About
+      },
+      {
+        path:"/blog",
+        Component:Blog
       }
     ]
   },
