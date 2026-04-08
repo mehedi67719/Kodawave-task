@@ -24,10 +24,11 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: <BiMap size={18} />, text: 'Chanchal Road, Puraton Jashore, Jashore - 7400', href: '#' },
-    { icon: <BiPhone size={18} />, text: '+880 1234-567890', href: 'tel:+8801747737704' },
-    { icon: <BiEnvelope size={18} />, text: 'hello@kodawave.com', href: 'mailto:hello@kodawave.com' },
+    { icon: <BiPhone size={18} />, text: '+880 1747737704', href: 'tel:+8801747737704' },
+    { icon: <BiEnvelope size={18} />, text: 'meh67719@gmail.com', href: 'meh67719@gmail.com' },
     { icon: <BiTime size={18} />, text: 'Sun - Thu: 9AM - 6PM', href: '#' },
   ];
+  
 
   return (
     <footer className="bg-white  pt-20 pb-8 border-t border-gray-100">
