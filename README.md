@@ -1,16 +1,60 @@
-# React + Vite
+# Kodawave - Digital Agency Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, premium digital agency website built with React 19, Tailwind CSS 4, and Framer Motion.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Live Demo URL](https://beautiful-salamander-c7392e.netlify.app/)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ✅ Hero section with animated gradient background
+- ✅ Trusted by section with client logos
+- ✅ Services overview with interactive cards
+- ✅ Portfolio slider with auto-slide functionality
+- ✅ Benefits / Why choose us section
+- ✅ Process guide with step-by-step workflow
+- ✅ Testimonials slider with client reviews
+- ✅ FAQ accordion section
+- ✅ Services page with pricing packages (Starter, Growth, Premium)
+- ✅ About page with team, vision, and achievements
+- ✅ Blog page with category filtering and search
+- ✅ Contact page with form and Google Maps
+- ✅ Responsive navbar with mobile menu
+- ✅ Footer with quick links
+- ✅ Smooth animations throughout
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| React | 19.2.4 | UI Library |
+| React DOM | 19.2.4 | DOM Rendering |
+| React Router | 7.14.0 | Navigation |
+| Tailwind CSS | 4.2.2 | Styling |
+| Framer Motion | 12.38.0 | Animations |
+| Swiper | 12.1.3 | Sliders |
+| React Icons | 5.6.0 | Icons |
+| Vite | 8.0.4 | Build Tool |
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/kodawave_tesk.git
+cd kodawave_tesk
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linting
+npm run lint
