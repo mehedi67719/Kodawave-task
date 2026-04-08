@@ -1,4 +1,3 @@
-// Process.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BiBulb, BiSearch, BiBrush, BiCodeAlt, BiRocket, BiSupport } from 'react-icons/bi';

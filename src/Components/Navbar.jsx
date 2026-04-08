@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import Logo from './Logo';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from './LanguageSwitcher';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useLanguage();
 
     const menuItems = [
-        { name: 'Home', path: '/' },
-        { name: 'Services', path: '/service' },
-        { name: 'About', path: '/about' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Contact', path: '/contact' },
+        { name: t('home'), path: '/' },
+        { name: t('services'), path: '/service' },
+        { name: t('about'), path: '/about' },
+        { name: t('blog'), path: '/blog' },
+        { name: t('contact'), path: '/contact' },
     ];
 
     return (
@@ -39,12 +42,13 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                <div className="hidden md:block">
+                <div className="hidden md:flex items-center gap-4">
+                    <LanguageSwitcher />
                     <Link
                         to="/contact"
                         className="bg-blue-600 text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md active:scale-95"
                     >
-                        Get Started
+                        {t('getStarted')}
                     </Link>
                 </div>
 
@@ -70,12 +74,15 @@ const Navbar = () => {
                             {item.name}
                         </NavLink>
                     ))}
+                    <div className="flex items-center gap-3">
+                        <LanguageSwitcher />
+                    </div>
                     <Link
                         to="/contact"
                         onClick={() => setIsOpen(false)}
                         className="bg-blue-600 text-white text-center py-4 rounded-2xl font-bold"
                     >
-                        Get a Free Consultation
+                        {t('getFreeConsultation')}
                     </Link>
                 </div>
             )}

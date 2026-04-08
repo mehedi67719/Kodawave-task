@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { BiMap, BiPhone, BiEnvelope, BiTime, BiChevronRight, BiHeart } from 'react-icons/bi';
 import Logo from './Logo';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Footer = () => {
   const quickLinks = [
@@ -24,7 +25,7 @@ const Footer = () => {
   const contactInfo = [
     { icon: <BiMap size={18} />, text: 'Chanchal Road, Puraton Jashore, Jashore - 7400', href: '#' },
     { icon: <BiPhone size={18} />, text: '+880 1234-567890', href: 'tel:+8801747737704' },
-    { icon: <BiEnvelope size={18} />, text: 'hello@kodawave.com', href: 'meh67719@gmail.com' },
+    { icon: <BiEnvelope size={18} />, text: 'hello@kodawave.com', href: 'mailto:hello@kodawave.com' },
     { icon: <BiTime size={18} />, text: 'Sun - Thu: 9AM - 6PM', href: '#' },
   ];
 
@@ -126,13 +127,16 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Kodawave. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Cookie Policy</a>
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-600 transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-blue-600 transition-colors">Terms of Service</Link>
+              <Link to="/refund-policy" className="text-gray-400 hover:text-blue-600 transition-colors">Refund Policy</Link>
             </div>
-            <p className="text-gray-400 text-sm flex items-center gap-1">
-              Made with <BiHeart size={14} className="text-red-500 animate-pulse" /> in Bangladesh
-            </p>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
+              <p className="text-gray-400 text-sm flex items-center gap-1">
+                Made with <BiHeart size={14} className="text-red-500 animate-pulse" /> in Bangladesh
+              </p>
+            </div>
           </div>
         </div>
       </div>

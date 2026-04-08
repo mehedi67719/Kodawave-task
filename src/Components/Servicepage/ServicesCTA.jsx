@@ -1,9 +1,13 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsArrowRight, BsHeadset, BsClock, BsShieldCheck } from 'react-icons/bs';
+import { useNavigate } from 'react-router';
+import { useLanguage } from '../LanguageSwitcher';
 
 const ServicesCTA = () => {
+  const navigate = useNavigate();
+  const { t } = useLanguage();
+
   return (
     <section className="py-28 px-6">
       <div className="max-w-7xl mx-auto">
@@ -39,9 +43,9 @@ const ServicesCTA = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             >
-              Ready to{' '}
+              {t('readyToScale')}{' '}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                scale your business?
+                {t('scaleBusiness')}
               </span>
             </motion.h2>
             
@@ -51,21 +55,21 @@ const ServicesCTA = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-gray-300 text-xl mb-10 max-w-2xl mx-auto"
             >
-              Get a free consultation with our experts and discover how we can help you grow
+              {t('scaleDesc')}
             </motion.p>
             
             <div className="flex flex-wrap justify-center gap-6 mb-10">
               <div className="flex items-center gap-2 text-gray-300">
                 <BsClock size={18} className="text-blue-400" />
-                <span>30-min strategy call</span>
+                <span>{t('strategyCall')}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <BsShieldCheck size={18} className="text-green-400" />
-                <span>No obligation</span>
+                <span>{t('noObligation')}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <BsHeadset size={18} className="text-purple-400" />
-                <span>Expert consultation</span>
+                <span>{t('expertConsultation')}</span>
               </div>
             </div>
             
@@ -75,9 +79,10 @@ const ServicesCTA = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact')}
               className="group px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 mx-auto"
             >
-              Get a Free Consultation
+              {t('getFreeConsultation')}
               <BsArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </motion.button>
           </div>

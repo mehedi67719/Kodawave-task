@@ -1,9 +1,13 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsArrowRight, BsLightningCharge, BsGift, BsShieldCheck } from 'react-icons/bs';
+import { useNavigate } from 'react-router';
+import { useLanguage } from '../LanguageSwitcher';
 
 const CTASection = () => {
+  const navigate = useNavigate();
+  const { t } = useLanguage();
+
   return (
     <section className="py-28 px-6">
       <div className="max-w-7xl mx-auto">
@@ -22,23 +26,28 @@ const CTASection = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Unlock Your{' '}
+            {t('unlockGrowth')}{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Growth
+              {t('growth')}
             </span>
           </h2>
           
           <p className="text-gray-400 text-xl mb-10 max-w-2xl mx-auto">
-            Enjoy the full experience with no fees or surprises!
+            {t('growthDesc')}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <span className="flex items-center gap-2 text-gray-300 text-sm"><BsGift /> No hidden fees</span>
-            <span className="flex items-center gap-2 text-gray-300 text-sm"><BsShieldCheck /> 30-day guarantee</span>
+            <span className="flex items-center gap-2 text-gray-300 text-sm"><BsGift /> {t('noHiddenFees')}</span>
+            <span className="flex items-center gap-2 text-gray-300 text-sm"><BsShieldCheck /> {t('guarantee')}</span>
           </div>
           
-          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="group px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:shadow-2xl transition-all duration-300 mx-auto">
-            Get a Free Consultation
+          <motion.button 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }} 
+            onClick={() => navigate('/contact')}
+            className="group px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:shadow-2xl transition-all duration-300 mx-auto"
+          >
+            {t('getFreeConsultation')}
             <BsArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
           </motion.button>
         </motion.div>

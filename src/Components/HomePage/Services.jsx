@@ -1,13 +1,30 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BiPalette, BiCube, BiCodeAlt, BiTrendingUp, BiRocket, BiSupport } from 'react-icons/bi';
+import { useLanguage } from '../LanguageSwitcher';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const categories = [
-    { title: "Brand", icon: <BiPalette size={28} />, items: ["Brand identity", "Positioning", "Motion design", "Animation"], color: "from-blue-500 to-cyan-500" },
-    { title: "3D", icon: <BiCube size={28} />, items: ["Marketing assets", "Guidelines", "Stream Asset", "Website Asset"], color: "from-purple-500 to-pink-500" },
-    { title: "Dev", icon: <BiCodeAlt size={28} />, items: ["Framer", "Nuxt", "Webflow", "Front-end"], color: "from-orange-500 to-red-500" },
+    { 
+      title: t('brand'), 
+      icon: <BiPalette size={28} />, 
+      items: [t('brandIdentity'), t('positioning'), t('motionDesign'), t('animation')], 
+      color: "from-blue-500 to-cyan-500" 
+    },
+    { 
+      title: t('d3'), 
+      icon: <BiCube size={28} />, 
+      items: [t('marketingAssets'), t('guidelines'), t('streamAsset'), t('websiteAsset')], 
+      color: "from-purple-500 to-pink-500" 
+    },
+    { 
+      title: t('dev'), 
+      icon: <BiCodeAlt size={28} />, 
+      items: [t('framer'), t('nuxt'), t('webflow'), t('frontend')], 
+      color: "from-orange-500 to-red-500" 
+    },
   ];
 
   return (
@@ -20,13 +37,13 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900">
-            Web projects that create{' '}
+            {t('webProjects')}{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              meaningful impact
+              {t('meaningfulImpact')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            We plan, design, and refine websites that feel calm, confident, and commercially useful.
+            {t('webProjectsDesc')}
           </p>
         </motion.div>
         

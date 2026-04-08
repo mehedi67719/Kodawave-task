@@ -1,4 +1,3 @@
-// Benefits.jsx
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { BiCheckCircle, BiRocket, BiTrendingUp, BiSupport, BiPalette, BiSearchAlt, BiAward, BiHappy } from 'react-icons/bi';

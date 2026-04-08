@@ -1,9 +1,13 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
+import { useNavigate } from 'react-router';
+import { useLanguage } from '../LanguageSwitcher';
 
 const AboutHero = () => {
+  const navigate = useNavigate();
+  const { t } = useLanguage();
+
   return (
     <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-white via-gray-50 to-blue-50 overflow-hidden">
       <div className="absolute top-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
@@ -20,7 +24,7 @@ const AboutHero = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          <span className="text-sm font-medium text-gray-700">Who We Are</span>
+          <span className="text-sm font-medium text-gray-700">{t('whoWeAre')}</span>
         </motion.div>
         
         <motion.h1 
@@ -29,15 +33,15 @@ const AboutHero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6"
         >
-          We're on a{' '}
+          {t('weAreOnMission')}{' '}
           <span className="relative inline-block">
             <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 blur-2xl opacity-30"></span>
             <span className="relative bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              mission
+              {t('mission')}
             </span>
           </span>
           <br />
-          to transform digital experiences
+          {t('transformDigital')}
         </motion.h1>
         
         <motion.p 
@@ -46,8 +50,7 @@ const AboutHero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-2xl mx-auto text-xl text-gray-600 mb-10 leading-relaxed"
         >
-          We're a team of designers, developers, and strategists passionate about 
-          creating digital solutions that drive real business growth.
+          {t('aboutHeroDesc')}
         </motion.p>
         
         <motion.div 
@@ -59,18 +62,23 @@ const AboutHero = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const element = document.getElementById('team');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all"
           >
-            Meet Our Team
+            {t('meetOurTeam')}
             <BsArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </motion.button>
           
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/service')}
             className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all"
           >
-            View Our Work
+            {t('viewOurWork')}
           </motion.button>
         </motion.div>
       </div>

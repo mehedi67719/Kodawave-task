@@ -10,7 +10,7 @@ const Blog = () => {
   return (
     <div className="overflow-hidden">
       <BlogHero/>
-      <div className="max-w-7xl mx-auto  py-16">
+      <div id="blog-grid" className="max-w-7xl mx-auto  py-16">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
             <BlogGrid />
@@ -20,7 +20,9 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <BlogCTA />
+      <div id="blog-cta">
+        <BlogCTA />
+      </div>
     </div>
   );
 };

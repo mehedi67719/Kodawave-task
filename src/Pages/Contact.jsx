@@ -1,4 +1,3 @@
-// ContactPage.jsx
 import React from 'react';
 import ContactHero from '../Components/Contactpage/ContactHero';
 import ContactForm from '../Components/Contactpage/ContactForm';

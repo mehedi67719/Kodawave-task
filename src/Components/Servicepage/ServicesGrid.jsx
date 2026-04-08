@@ -62,7 +62,7 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section className="py-28 px-6 bg-white">
+    <section id="services-grid" className="py-28 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,9 +1,13 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BiChevronLeft, BiChevronRight, BiExpand } from 'react-icons/bi';
+import { useNavigate } from 'react-router';
+import { useLanguage } from '../LanguageSwitcher';
 
 const PortfolioSlider = () => {
+  const navigate = useNavigate();
+  const { t } = useLanguage();
+
   const projects = [
     { id: 1, title: "A curated reel of 3D studies", subtitle: "Product shots and atmospheric scenes in progress", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800", color: "from-cyan-500 to-blue-600" },
     { id: 2, title: "Motion Design Portfolio", subtitle: "Animation and visual effects showcase", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800", color: "from-purple-500 to-pink-600" },
@@ -59,13 +63,13 @@ const PortfolioSlider = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900">
-            Showcasing our finest{' '}
+            {t('showcasing')}{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              creative craftsmanship
+              {t('creativeCraftsmanship')}
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            A curated reel of 3D studies, product shots, and atmospheric scenes in progress.
+            {t('curatedReel')}
           </p>
         </motion.div>
         
@@ -99,7 +103,7 @@ const PortfolioSlider = () => {
                     transition={{ delay: 0.3 }}
                   >
                     <span className={`inline-block px-4 py-2 bg-gradient-to-r ${projects[currentIndex].color} rounded-full text-white text-sm font-semibold mb-4 shadow-lg`}>
-                      Featured Work
+                      {t('featuredWork')}
                     </span>
                     <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                       {projects[currentIndex].title}
@@ -108,9 +112,10 @@ const PortfolioSlider = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => navigate('/service')}
                       className="px-8 py-3 bg-white text-gray-900 rounded-full font-semibold flex items-center gap-2 hover:shadow-xl transition-all"
                     >
-                      View Project <BiExpand size={20} />
+                      {t('viewProject')} <BiExpand size={20} />
                     </motion.button>
                   </motion.div>
                 </div>

@@ -1,4 +1,3 @@
-// TeamSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BiLineChart, BiPalette, BiCodeAlt, BiUser } from 'react-icons/bi';
@@ -36,7 +35,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="py-28 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section id="team" className="py-28 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

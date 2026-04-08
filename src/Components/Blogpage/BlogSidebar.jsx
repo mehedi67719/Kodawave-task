@@ -1,9 +1,18 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BiSearch, BiTrendingUp, BiTag, BiEnvelope } from 'react-icons/bi';
+import { useLanguage } from '../LanguageSwitcher';
 
 const BlogSidebar = () => {
+  const { t } = useLanguage();
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = () => {
+    if (email) {
+      window.location.href = `mailto:hello@kodawave.com?subject=Blog Newsletter Subscription&body=Please subscribe: ${email}`;
+    }
+  };
+
   const popularPosts = [
     { title: "10 Essential SEO Strategies That Will Boost Your Rankings", views: "12.5k views", link: "#" },
     { title: "The Future of Web Development: What's Coming in 2025", views: "8.2k views", link: "#" },
@@ -31,12 +40,12 @@ const BlogSidebar = () => {
       >
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <BiSearch size={20} className="text-blue-600" />
-          Search
+          {t('search')}
         </h3>
         <div className="relative">
           <input 
             type="text" 
-            placeholder="Search articles..."
+            placeholder={t('searchArticles')}
             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-600">
@@ -53,7 +62,7 @@ const BlogSidebar = () => {
       >
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <BiTrendingUp size={20} className="text-orange-500" />
-          Popular Posts
+          {t('popularPosts')}
         </h3>
         <div className="space-y-4">
           {popularPosts.map((post, index) => (
@@ -81,7 +90,7 @@ const BlogSidebar = () => {
       >
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <BiTag size={20} className="text-purple-500" />
-          Categories
+          {t('categories')}
         </h3>
         <div className="space-y-3">
           {categories.map((cat, index) => (
@@ -101,7 +110,7 @@ const BlogSidebar = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="bg-white rounded-2xl shadow-xl p-6"
       >
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Popular Tags</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('popularTags')}</h3>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, index) => (
             <a key={index} href="#" className="px-3 py-1.5 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all">
@@ -118,15 +127,20 @@ const BlogSidebar = () => {
         className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl p-6 text-center text-white"
       >
         <BiEnvelope size={40} className="mx-auto mb-4" />
-        <h3 className="text-xl font-bold mb-2">Subscribe to Newsletter</h3>
-        <p className="text-sm text-blue-100 mb-4">Get the latest posts delivered to your inbox</p>
+        <h3 className="text-xl font-bold mb-2">{t('subscribeNewsletter')}</h3>
+        <p className="text-sm text-blue-100 mb-4">{t('getLatestPosts')}</p>
         <input 
           type="email" 
-          placeholder="Your email address"
+          placeholder={t('yourEmail')}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full px-4 py-2 rounded-xl text-gray-900 mb-3 focus:outline-none"
         />
-        <button className="w-full bg-white text-purple-600 py-2 rounded-xl font-semibold hover:shadow-lg transition-all">
-          Subscribe
+        <button 
+          onClick={handleSubscribe}
+          className="w-full bg-white text-purple-600 py-2 rounded-xl font-semibold hover:shadow-lg transition-all"
+        >
+          {t('subscribe')}
         </button>
       </motion.div>
     </div>
